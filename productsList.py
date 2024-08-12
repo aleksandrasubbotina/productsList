@@ -5,11 +5,11 @@ def products(count):
         result += f'{{"id": {i+1}, "quantity": 1}}, '
     return result[:-2]
 
+# Creates a string in JSON format with unique IDs
 def ids(count):
     result = ""
     for i in range(count):
-        new_element = f'"id": {i+1}, '
-        result += new_element
+        result += str(i+1) + ", "
     return result[:-2]
 
 # Creates full request body in JSON format: name of the list and its contents
