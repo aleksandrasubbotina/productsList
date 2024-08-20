@@ -16,6 +16,13 @@ function ids() {
 # User input: amount of product names needed in the list
 read -p "Enter number of product names: " COUNT
 
-# Result string and output
-RESULT=$(ids $COUNT)
-echo "{"productsList":[$RESULT]}"
+# Check if input is integer
+re='^[0-9]+$'
+if [[ $COUNT =~ $re ]]
+then
+    # Result string and output
+    RESULT=$(ids $COUNT)
+    echo "{"productsList":[$RESULT]}"
+else
+    echo "Error: please enter a number"
+fi
